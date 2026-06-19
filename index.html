@@ -1,16 +1,152 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>WELCOME TO THE STUDENT TASK ORGANISER</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body class="hi">
-        <h1>TO DO LIST</h1>
-        <p>Welcome to this site</p>
-            <input type="text" id="taskIn" placeholder="enter text"> <br><br>
-            <button onclick="addTask()">Add</button>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Productivity Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <h1>📚 STUDENT PRODUCTIVITY DASHBOARD</h1>
+    </nav>
+
+    <div class="container">
+
+        <!-- Mascot -->
+        <div class="card mascot-card">
+            <h2>🐼 Study Buddy</h2>
+            <p id="mascotText">
+                🌟 Welcome! Let's get productive today.
+            </p>
+        </div>
+
+        <!-- Motivation -->
+        <div class="card">
+            <h2>💖 Daily Motivation</h2>
+            <p id="quote"></p>
+        </div>
+
+        <!-- Add Task -->
+        <div class="card">
+            <h2>✅ Add New Task</h2>
+
+            <input
+                type="text"
+                id="taskIn"
+                placeholder="Enter your task">
+
+            <input
+                type="datetime-local"
+                id="deadline">
+
+            <button
+                class="addBtn"
+                onclick="addTask()">
+                Add Task
+            </button>
+        </div>
+
+        <!-- Progress -->
+        <div class="card">
+            <h2>📊 Progress Tracker</h2>
+
+            <div class="progress-container">
+                <div id="progressBar"></div>
+            </div>
+
+            <p id="progressText">
+                0% Completed
+            </p>
+        </div>
+
+        <!-- Achievements -->
+        <div class="card">
+            <h2>🏆 Achievements</h2>
+
+            <div id="badgeArea">
+                No badges yet.
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="card">
+            <h2>📈 Statistics</h2>
+
+            <p>Total Tasks: <span id="totalTasks">0</span></p>
+
+            <p>Completed Tasks:
+                <span id="completedTasks">0</span>
+            </p>
+
+            <p>Pending Tasks:
+                <span id="pendingTasks">0</span>
+            </p>
+        </div>
+
+        <!-- Task List -->
+        <div class="card full-width">
+            <h2>📝 My Tasks</h2>
+
             <ul id="taskList"></ul>
-        <script src="script.js"></script>
-    </body>
-    
+        </div>
+
+        <!-- Reminder Section -->
+        <div class="card full-width">
+            <h2>🔔 Reminders</h2>
+
+            <ul id="reminderList"></ul>
+        </div>
+
+        <!-- Calendar -->
+        <div class="card">
+            <h2>📅 Important Events</h2>
+
+            <input
+                type="date"
+                id="eventDate">
+
+            <input
+                type="text"
+                id="eventText"
+                placeholder="Exam / Interview / Goal">
+
+            <button onclick="addEvent()">
+                Save Event
+            </button>
+
+            <ul id="eventList"></ul>
+        </div>
+
+        <!-- Weekly Goals -->
+        <div class="card">
+            <h2>🎯 Weekly Goals</h2>
+
+            <textarea
+                id="weeklyGoal"
+                placeholder="Write your weekly goals here">
+            </textarea>
+        </div>
+
+        <!-- Monthly Goals -->
+        <div class="card">
+            <h2>🚀 Monthly Goals</h2>
+
+            <textarea
+                id="monthlyGoal"
+                placeholder="Write your monthly goals here">
+            </textarea>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
 </html>
